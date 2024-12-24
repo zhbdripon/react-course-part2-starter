@@ -1,5 +1,6 @@
 import axios, { AxiosError } from "axios";
 import { useQuery } from "react-query";
+import { CACHE_KEYS } from "../constants";
 
 export interface Todo {
   id: number | Date;
@@ -16,7 +17,7 @@ const useTodos = () => {
   };
 
   return useQuery<Todo[], AxiosError>({
-    queryKey: ["todos"],
+    queryKey: CACHE_KEYS.TODO,
     queryFn: fetchTodos,
   });
 };
