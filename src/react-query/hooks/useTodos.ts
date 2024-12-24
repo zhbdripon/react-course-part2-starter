@@ -2,10 +2,10 @@ import axios, { AxiosError } from "axios";
 import { useQuery } from "react-query";
 
 export interface Todo {
-  id: number;
+  id: number | Date;
   title: string;
-  userId: number;
-  completed: boolean;
+  userId?: number;
+  completed?: boolean;
 }
 
 const useTodos = () => {
